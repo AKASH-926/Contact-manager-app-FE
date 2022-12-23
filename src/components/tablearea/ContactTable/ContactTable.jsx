@@ -74,10 +74,10 @@ export default function ContactTable() {
                         </th>
 
                         <th >Name</th>
-                        <th >| Designation <img id='arrow-img1' src="/arrow.png" alt="" /></th>
-                        <th >| Company<img id='arrow-img2' src="/arrow.png" alt="" /></th>
-                        <th >| Industry<img id='arrow-img3' src="/arrow.png" alt="" /></th>
-                        <th >| Email</th>
+                        <th >| Designation </th>
+                        <th ><img id='arrow-img1' src="/arrow.png" alt="" />| Company</th>
+                        <th ><img id='arrow-img2' src="/arrow.png" alt="" />| Industry</th>
+                        <th ><img id='arrow-img3' src="/arrow.png" alt="" />| Email</th>
                         <th>| Phone Number</th>
                         <th>| Country</th>
                         <th className='border-right-radius'>| Action</th>
