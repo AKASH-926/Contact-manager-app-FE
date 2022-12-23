@@ -59,7 +59,7 @@ export default function Delete(props) {
                 </div>
             }
             {isDeleted &&
-                <div>
+                <div className='delete-component-container' >
                     <div className='delete-container' >
                         {isSelectedLen ?
                             <img src="/success.png" style={{ width: "30px" }} alt="success-icon" />

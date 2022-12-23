@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Header from '../Header/Header'
 import Pagination from '../Pagination/Pagination'
 import Sidebar from '../sidebar/sidebar'
@@ -8,10 +8,13 @@ import "./contactpage.css"
 // import ImportFile from '../import/ImportFile'
 import Delete from '../delete/Delete'
 import ImportFile from "../import/importFile"
+
+import { importContext } from '../Context/ContactContext'
 export default function ContactPage() {
+    const { isDeleted, imported,isImportClicked ,isDeleteOk } = useContext(importContext)
     return (
         <div id='contact-page-wrap'>
-            <div className='delete-import-components'>
+            <div className= {isDeleteOk || isDeleted ||imported||isImportClicked ? "delete-import-components " : ""}  >
                 <Delete />
                 <ImportFile />
             </div>
