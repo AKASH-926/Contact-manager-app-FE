@@ -6,11 +6,11 @@ export default function ContactTable() {
 
     const { pagedcontact } = useContext(ContactContext)
     const { searchdata, isSearch } = useContext(SearchContext)
-    const { setDeleted, setDeleteOk, selectedId, setSelectedId,nameSelected,setNameSelected } = useContext(importContext)
+    const { setDeleted, setDeleteOk, selectedId, setSelectedId, nameSelected, setNameSelected } = useContext(importContext)
     // console.log(searchdata)
 
     const handleCheckBox = (e, id) => {
-       
+
         if (e.target.checked) {
             setSelectedId([...selectedId, e.target.value])
             console.log(selectedId);
@@ -54,25 +54,25 @@ export default function ContactTable() {
             <table id='table-wrap' cellSpacing={0}>
                 <thead >
                     <tr id='head-wrap'>
-                        <th className='border-left-radius' ><input type="checkbox" name="" id="" /></th>
+                        {/* <th className='border-left-radius' ><input type="checkbox" name="" id="" /></th> */}
 
                         <th className='border-left-radius' ><div>
-                            <input type="checkbox" 
-                            checked = {nameSelected}
-                            onChange={(e)=> {
-                                if(e.target.checked){
-                                    setNameSelected(true)
-                                    setSelectedId(pagedcontact)
-                                }else{
-                                    setNameSelected(false)
-                                    setSelectedId([])
-                                }
+                            <input type="checkbox"
+                                checked={nameSelected}
+                                onChange={(e) => {
+                                    if (e.target.checked) {
+                                        setNameSelected(true)
+                                        setSelectedId(pagedcontact)
+                                    } else {
+                                        setNameSelected(false)
+                                        setSelectedId([])
+                                    }
 
-                            }}
-                             name=""  id="" />
+                                }}
+                                name="" id="" />
                         </div>
                         </th>
-                        
+
                         <th >Name</th>
                         <th >| Designation <img className='arrow-img' src="/arrow.png" alt="" /></th>
                         <th >| Company<img className='arrow-img' src="/arrow.png" alt="" /></th>
@@ -107,8 +107,8 @@ export default function ContactTable() {
                                         value={item._id} name="" id={item._id}
                                         onChange={(e) => handleCheckBox(e, item._id)}
                                     /></div></td> */}
-                                     <td><div><input type="checkbox"
-                                        value={item._id} name="" id={item._id} 
+                                    <td><div><input type="checkbox"
+                                        value={item._id} name="" id={item._id}
                                         onChange={(e) => handleCheckBox(e, item._id)}
                                     /></div></td>
                                     <td>{item.Name}</td>
