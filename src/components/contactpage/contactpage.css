@@ -1,9 +1,13 @@
 .delete-import-components {
     z-index: 4;
     position: absolute;
-    top: 38vh;
-    left: 44vw;
-    right: 40vw;
-    bottom: 40vh;
     opacity: 1;
+    width: 100vw;
+    height: 100vh;
+    background-color:  rgba(66, 64, 64,0.38);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
 }
+
