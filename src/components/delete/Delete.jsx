@@ -4,21 +4,20 @@ import { importContext } from '../Context/ContactContext';
 import axios from "axios"
 export default function Delete(props) {
     const { isDeleted, setDeleted, setDeleteOk, isDeleteOk, selectedId, setSelectedId, isSelectedLen, setSelectedLen, setNameSelected } = useContext(importContext)
-    console.log(selectedId);
+    // console.log(selectedId);
     if (selectedId.length !== 0) {
         setSelectedLen(true)
-
     } else {
         setSelectedLen(false)
     }
     const token = window.localStorage.getItem("jwt")
     const handleDelete = (e) => {
-        console.log("printing1", isSelectedLen);
-        console.log(selectedId);
+        // console.log("printing1", isSelectedLen);
+        // console.log(selectedId);
 
 
         console.log("printing2", isSelectedLen);
-        axios.delete("http://localhost:8000/contacts/delete", {
+        axios.delete("https://contact-srver-test.onrender.com/contacts/delete", {
             headers: {
                 authorization: token
             },
@@ -47,11 +46,11 @@ export default function Delete(props) {
                     <div className='icon-holder' >
                         <img src='/deleteIcon.png' style={{ width: "13px" }} alt="delete-icon" />
                     </div>
-                   { isSelectedLen &&  <div style={{ fontSize: "13px", fontWeight: 600 }} >Delete Contacts</div> }
+                    {isSelectedLen && <div style={{ fontSize: "13px", fontWeight: 600 }} >Delete Contacts</div>}
                     {isSelectedLen ?
                         <div style={{ color: "#2DA5FC", fontSize: "12px", textAlign: "center" }}>Sure you want to delete these contacts ?</div>
                         :
-                        <div style={{ color: "#2DA5FC", fontSize: "14px",padding:"4px", textAlign: "center" }}>Select items to Delete</div>
+                        <div style={{ color: "#2DA5FC", fontSize: "14px", padding: "4px", textAlign: "center" }}>Select items to Delete</div>
 
                     }
                     <div className='btns-holder'>

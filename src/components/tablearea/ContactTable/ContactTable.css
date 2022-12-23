@@ -45,9 +45,21 @@ width: 17px;
 margin-left: 5px;
 cursor: pointer;
 }
-.arrow-img{
+#arrow-img1{
 position: relative;
     width: 8px;
-   left: 32%;
+   left: 25%;
+   cursor: pointer;
+}
+#arrow-img2{
+position: relative;
+    width: 8px;
+   left: 25%;
+   cursor: pointer;
+}
+#arrow-img3{
+position: relative;
+    width: 8px;
+   left: 54%;
    cursor: pointer;
 }
