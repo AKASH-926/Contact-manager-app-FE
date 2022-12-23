@@ -27,6 +27,7 @@ export default function Sidebar() {
             <div id='logout'>
                 <img src="/logout.png" alt="logout" /><span onClick={() => {
                     window.localStorage.removeItem('jwt');
+                    window.localStorage.removeItem('user_name');
                     sessionStorage.clear();
                     localStorage.clear();
                     setcontactdata([])
