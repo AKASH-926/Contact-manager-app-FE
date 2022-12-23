@@ -56,7 +56,7 @@ export default function Header() {
 
             </div>
             <div id='admin' ><img src="/user.png" alt="" /><div id='admin-name'><span>{user_display}</span>
-                <span>User</span></div></div>
+                <span>User </span></div></div>
 
         </div>
 
