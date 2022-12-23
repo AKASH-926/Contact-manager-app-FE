@@ -19,7 +19,7 @@ export default function ContactProvider({ children }) {
         }
         datafetch()
         // eslint-disable-next-line 
-    }, [imported, isDeleted])
+    }, [imported, isDeleted, token])
 
 
     return (
