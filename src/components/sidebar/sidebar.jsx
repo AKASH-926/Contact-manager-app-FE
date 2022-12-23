@@ -1,15 +1,16 @@
 // import '../node_modules/react-toastify/dist/ReactToastify.css'
 import '../../../node_modules/react-toastify/dist/ReactToastify.css'
 import 'react-toastify/dist/ReactToastify.min.css'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Navigate, Outlet } from "react-router-dom"
 import { useNavigate } from 'react-router-dom';
 import "./sidebar.css"
 import { toast } from 'react-toastify';
-
+import { ContactContext } from '../Context/ContactContext';
 toast.configure();
 
 export default function Sidebar() {
+    const { setcontactdata } = useContext(ContactContext)
     const navigate = useNavigate();
     const [selstyle, setselstyle] = useState({ dashboard: true, contact: true })
     return (
@@ -28,6 +29,7 @@ export default function Sidebar() {
                     window.localStorage.removeItem('jwt');
                     sessionStorage.clear();
                     localStorage.clear();
+                    setcontactdata([])
                     navigate('/');
                     toast.success("Logged Out", {
                         position: toast.POSITION.TOP_CENTER,
