@@ -32,6 +32,7 @@ export default function Sidebar() {
                     localStorage.clear();
                     setcontactdata([])
                     navigate('/');
+                    setseldash(false)
                     toast.success("Logged Out", {
                         position: toast.POSITION.TOP_CENTER,
                     });

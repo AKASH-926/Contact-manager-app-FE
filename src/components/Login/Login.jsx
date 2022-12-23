@@ -48,9 +48,9 @@ function Login() {
             },
         })
             .then((res) => {
-                console.log(res);
-                console.log(res.data.token);
-                console.log("Logged In");
+                // console.log(res);
+                // console.log(res.data.token);
+                // console.log("Logged In");
                 navigate("/contacts");
                 toast.success("Logged in Successfully", {
                     position: toast.POSITION.TOP_CENTER,
@@ -61,7 +61,7 @@ function Login() {
                 window.localStorage.setItem('user_name', Email.split('@')[0]);
             })
             .catch((e) => {
-                console.log(e.message);
+                // console.log(e.message);
                 // console.log(e.response.status);
                 if (e.message === 'Network Error') {
                     return toast.error('Network Error', {
