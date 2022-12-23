@@ -57,6 +57,8 @@ function Login() {
                 });
 
                 window.localStorage.setItem("jwt", res.data.token);
+                //To display UserName on top right
+                window.localStorage.setItem('user_name', Email.split('@')[0]);
             })
             .catch((e) => {
                 console.log(e.message);
