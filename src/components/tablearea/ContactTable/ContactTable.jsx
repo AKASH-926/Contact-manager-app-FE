@@ -27,7 +27,7 @@ export default function ContactTable() {
     const token = window.localStorage.getItem("jwt")
     const handleDelete = (e, id) => {
 
-        axios.delete("http://localhost:8000/contacts/delete", {
+        axios.delete("https://contact-srver-test.onrender.com/contacts/delete", {
             headers: {
                 authorization: token
             },
@@ -74,9 +74,9 @@ export default function ContactTable() {
                         </th>
 
                         <th >Name</th>
-                        <th >| Designation <img className='arrow-img' src="/arrow.png" alt="" /></th>
-                        <th >| Company<img className='arrow-img' src="/arrow.png" alt="" /></th>
-                        <th >| Industry<img className='arrow-img' src="/arrow.png" alt="" /></th>
+                        <th >| Designation <img id='arrow-img1' src="/arrow.png" alt="" /></th>
+                        <th >| Company<img id='arrow-img2' src="/arrow.png" alt="" /></th>
+                        <th >| Industry<img id='arrow-img3' src="/arrow.png" alt="" /></th>
                         <th >| Email</th>
                         <th>| Phone Number</th>
                         <th>| Country</th>

@@ -17,7 +17,7 @@ export default function Delete(props) {
 
 
         console.log("printing2", isSelectedLen);
-        axios.delete("http://localhost:8000/contacts/delete", {
+        axios.delete("https://contact-srver-test.onrender.com/contacts/delete", {
             headers: {
                 authorization: token
             },

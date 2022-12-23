@@ -30,7 +30,7 @@ function Signup() {
             });
         }
 
-        await Axios("http://localhost:8000/signup", {
+        await Axios("https://contact-srver-test.onrender.com/signup", {
             method: "post",
             headers: {
                 "Content-Type": "application/json",

@@ -15,7 +15,7 @@ export default function ContactProvider({ children }) {
 
     useEffect(() => {
         const datafetch = async () => {
-            await axios.get("http://localhost:8000/contacts", { headers: { authorization: token } }).then((response) => { setcontactdata(response.data.contacts) })
+            await axios.get("https://contact-srver-test.onrender.com/contacts", { headers: { authorization: token } }).then((response) => { setcontactdata(response.data.contacts) })
             console.log(contactdata)
         }
         datafetch()
