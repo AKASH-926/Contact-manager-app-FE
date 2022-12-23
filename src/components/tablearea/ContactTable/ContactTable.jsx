@@ -54,6 +54,8 @@ export default function ContactTable() {
             <table id='table-wrap' cellSpacing={0}>
                 <thead >
                     <tr id='head-wrap'>
+                        <th className='border-left-radius' ><input type="checkbox" name="" id="" /></th>
+
                         <th className='border-left-radius' ><div>
                             <input type="checkbox" 
                             checked = {nameSelected}
@@ -70,10 +72,11 @@ export default function ContactTable() {
                              name=""  id="" />
                         </div>
                         </th>
+                        
                         <th >Name</th>
-                        <th >| Designation</th>
-                        <th >| Industry</th>
-                        <th >| Company</th>
+                        <th >| Designation <img className='arrow-img' src="/arrow.png" alt="" /></th>
+                        <th >| Company<img className='arrow-img' src="/arrow.png" alt="" /></th>
+                        <th >| Industry<img className='arrow-img' src="/arrow.png" alt="" /></th>
                         <th >| Email</th>
                         <th>| Phone Number</th>
                         <th>| Country</th>
@@ -88,8 +91,8 @@ export default function ContactTable() {
                             <td><div><input type="checkbox" name="" id="" /></div></td>
                             <td>{searchdata.Name}</td>
                             <td>{searchdata.Designation}</td>
-                            <td>{searchdata.Industry}</td>
                             <td>{searchdata.Company}</td>
+                            <td>{searchdata.Industry}</td>
                             <td >{searchdata.Email}</td>
                             <td>{searchdata.Phone_number}</td>
                             <td>{searchdata.Country}</td>
