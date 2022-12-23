@@ -33,8 +33,9 @@
         height: 40px;
 }
 .table-content-wrap>td{
-    margin-left: 10px;
+    position: relative;
     font-weight: bold;
+    left: 1px;
 }
 #table-rows tr:nth-child(even){
     background-color: rgba(178, 223, 255, 0.31);
@@ -43,4 +44,10 @@
 width: 17px;
 margin-left: 5px;
 cursor: pointer;
+}
+.arrow-img{
+position: relative;
+    width: 8px;
+   left: 32%;
+   cursor: pointer;
 }

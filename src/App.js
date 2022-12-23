@@ -9,6 +9,7 @@ import ContactProvider from './components/Context/ContactProvider';
 import SearchProvider from './components/Context/SearchProvider';
 import ImportProvider from './components/Context/ImportProvider';
 import Delete from './components/delete/Delete';
+import Dashboard from './components/Dashboard/Dashboard';
 function App() {
   return (
     <>
@@ -21,11 +22,8 @@ function App() {
                 <Route path='/' element={<Login />} />
                 <Route element={<Protected_route />}>
                   <Route path='/contacts' element={
-
-                    <ContactPage />
-
-
-                  } />
+                    <ContactPage />} />
+                  <Route path='/dashboard' element={<Dashboard />} />
                 </Route>
 
                 {/* <Route path='/fake' element={<Delete />} /> */}
