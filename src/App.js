@@ -23,13 +23,8 @@ function App() {
                 <Route element={<Protected_route />}>
                   <Route path='/contacts' element={
                     <ContactPage />} />
-                  <Route path='/dashboard' element={<Dashboard />} />
                 </Route>
-
-                {/* <Route path='/fake' element={<Delete />} /> */}
-
               </Routes>
-
             </SearchProvider>
           </ContactProvider>
         </ImportProvider>

@@ -7,7 +7,8 @@ export default function ContactProvider({ children }) {
 
     const [contactdata, setcontactdata] = useState([])
     const [pagedcontact, setpagedcontact] = useState([])
-
+    const [seldash, setseldash] = useState(false)
+    // const [selcontact, setselcontact] = useState(true)
     const token = window.localStorage.getItem("jwt")
 
     const { imported, isDeleted } = useContext(importContext)
@@ -23,7 +24,7 @@ export default function ContactProvider({ children }) {
 
 
     return (
-        <ContactContext.Provider value={{ contactdata, setcontactdata, pagedcontact, setpagedcontact }}>
+        <ContactContext.Provider value={{ contactdata, setcontactdata, pagedcontact, setpagedcontact, seldash, setseldash }}>
             {children}
         </ContactContext.Provider>
     )

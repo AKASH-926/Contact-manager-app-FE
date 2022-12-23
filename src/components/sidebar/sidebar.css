@@ -57,6 +57,18 @@ cursor: pointer;
             transition: 800ms;
             font-weight: 600;
 }
+#dashboard-cont:active{
+        background-color: #2DA5FC;
+        color: white;
+        border-radius: 6px;
+        position: relative;
+            bottom: 45%;
+            margin-bottom: 10%;
+            height: 50px;
+            padding-left: 8px;
+            transition: 800ms;
+            font-weight: 600;
+}
 #dashboard-cont-select{
         background-color: #2DA5FC;
         color: white;
@@ -80,6 +92,17 @@ cursor: pointer;
             font-weight: 600;
 }
 #contact-cont:hover{
+    background-color: #2DA5FC;
+    color: white;
+    border-radius: 6px;
+    position: relative;
+        bottom: 120%;
+        height: 50px;
+        width: 150px;
+        padding-left: 8px;
+        transition: 800ms;
+}
+#contact-cont:active{
     background-color: #2DA5FC;
     color: white;
     border-radius: 6px;

@@ -10,20 +10,19 @@ import { ContactContext } from '../Context/ContactContext';
 toast.configure();
 
 export default function Sidebar() {
-    const { setcontactdata } = useContext(ContactContext)
+    const { setcontactdata, seldash, setseldash } = useContext(ContactContext)
     const navigate = useNavigate();
-    const [seldash, setseldash] = useState(true)
-    const [selcontact, setselcontact] = useState(true)
+
     return (
         <div id='sidebar-wrap'>
             <div id='logo'>
                 <img src="/logo.png" alt="" />
             </div>
-            <div className='Sidebar-options' id={seldash ? "dashboard-cont" : "dashboard-cont-select"} onClick={() => { setselcontact(true); setseldash(false); navigate("/dashboard") }}>
+            <div className='Sidebar-options' id={seldash ? "dashboard-cont-select" : "dashboard-cont"} onClick={() => { setseldash(true); }}>
                 <img src="/dashboard.png" alt="dashboard" /><span onClick={() => { }}>Dashboard</span>
             </div>
-            <div className='Sidebar-options' id={selcontact ? "contact-cont" : "contact-cont-select"} onClick={() => { setselcontact(false); setseldash(true); navigate("/contacts") }}>
-                <img src="/vector.png" alt="contact" /><span>Total contacts </span>
+            <div className='Sidebar-options' id={seldash ? "contact-cont" : "contact-cont-select"} onClick={() => { setseldash(false); }}>
+                <img src="/Vector.png" alt="contact" /><span>Total contacts </span>
             </div>
             <div id='logout'>
                 <img src="/logout.png" alt="logout" /><span onClick={() => {
