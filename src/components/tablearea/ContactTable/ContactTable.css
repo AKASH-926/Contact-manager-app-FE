@@ -48,18 +48,18 @@ cursor: pointer;
 #arrow-img1{
 position: relative;
     width: 8px;
-   left: 25%;
+   left:0%;
    cursor: pointer;
 }
 #arrow-img2{
 position: relative;
     width: 8px;
-   left: 25%;
+   left: 0%;
    cursor: pointer;
 }
 #arrow-img3{
 position: relative;
     width: 8px;
-   left: 54%;
+   left: 0%;
    cursor: pointer;
 }
