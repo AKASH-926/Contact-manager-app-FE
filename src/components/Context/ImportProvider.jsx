@@ -8,6 +8,8 @@ export default function ImportProvider({ children }) {
     const [isDeleteOk, setDeleteOk] = useState(false)
     const [selectedId, setSelectedId] = useState([])
     const [isSelectedLen,setSelectedLen] = useState(false)
+    const [nameSelected,setNameSelected] = useState(false)
+
     return (
         <div>
             <importContext.Provider
@@ -16,7 +18,8 @@ export default function ImportProvider({ children }) {
                         imported, setImported, isDeleted,
                         setImportClicked, isImportClicked, setDeleted,
                         isDeleteOk, setDeleteOk, selectedId,
-                        setSelectedId,isSelectedLen,setSelectedLen
+                        setSelectedId,isSelectedLen,setSelectedLen,
+                        nameSelected,setNameSelected
                     }
                 } >
                 {children}

@@ -3,19 +3,20 @@ import "./Delete.css"
 import { importContext } from '../Context/ContactContext';
 import axios from "axios"
 export default function Delete(props) {
-    const { isDeleted, setDeleted, setDeleteOk, isDeleteOk, selectedId, setSelectedId, isSelectedLen, setSelectedLen } = useContext(importContext)
+    const { isDeleted, setDeleted, setDeleteOk, isDeleteOk, selectedId, setSelectedId, isSelectedLen, setSelectedLen, setNameSelected } = useContext(importContext)
     console.log(selectedId);
+    if (selectedId.length !== 0) {
+        setSelectedLen(true)
 
+    } else {
+        setSelectedLen(false)
+    }
     const token = window.localStorage.getItem("jwt")
     const handleDelete = (e) => {
         console.log("printing1", isSelectedLen);
         console.log(selectedId);
 
-        if (selectedId.length != 0) {
-            setSelectedLen(true)
-        } else {
-            setSelectedLen(false)
-        }
+
         console.log("printing2", isSelectedLen);
         axios.delete("http://localhost:8000/contacts/delete", {
             headers: {
@@ -26,10 +27,11 @@ export default function Delete(props) {
             }
         })
             .then((data) => {
-                setDeleted(true)
                 setDeleteOk(false)
+                setDeleted(true)
                 console.log(isSelectedLen);
                 setSelectedId([])
+                setNameSelected(false)
                 setTimeout(async () => {
                     await setDeleted(false)
                 }, 1500)
@@ -45,15 +47,19 @@ export default function Delete(props) {
                     <div className='icon-holder' >
                         <img src='/deleteIcon.png' style={{ width: "13px" }} alt="delete-icon" />
                     </div>
-                    <div style={{ fontSize: "13px", fontWeight: 600 }} >Delete Contacts</div>
+                   { isSelectedLen &&  <div style={{ fontSize: "13px", fontWeight: 600 }} >Delete Contacts</div> }
+                    {isSelectedLen ?
+                        <div style={{ color: "#2DA5FC", fontSize: "12px", textAlign: "center" }}>Sure you want to delete these contacts ?</div>
+                        :
+                        <div style={{ color: "#2DA5FC", fontSize: "14px",padding:"4px", textAlign: "center" }}>Select items to Delete</div>
 
-                    <div style={{ color: "#2DA5FC", fontSize: "12px", textAlign: "center" }}>Sure you want to delete these contacts ?</div>
+                    }
                     <div className='btns-holder'>
                         <button className='cancel-btn' onClick={() => {
                             setDeleteOk(false)
                         }} >Cancel</button>
 
-                        <button className='confirm-btn' onClick={(e) => handleDelete(e)} >OK</button>
+                        {isSelectedLen && <button className='confirm-btn' onClick={(e) => handleDelete(e)} >OK</button>}
 
                     </div>
                 </div>
@@ -61,13 +67,11 @@ export default function Delete(props) {
             {isDeleted &&
                 <div className='delete-component-container' >
                     <div className='delete-container' >
-                        {isSelectedLen ?
+                        {(isSelectedLen || isDeleted) &&
                             <img src="/success.png" style={{ width: "30px" }} alt="success-icon" />
-                            :
-                            <img src="/wrong.png" style={{ width: "30px" }} alt="wrong-icon" />
                         }
-                        <div style={{ fontSize: "15px", fontWeight: 600 }} >
-                            {isSelectedLen ? "Contacts Deleted" : "Select Contacts To Delete"}
+                        <div style={{ fontSize: "16px", fontWeight: 600 }} >
+                            {(isSelectedLen || isDeleted) && "Contacts Deleted"}
                         </div>
                     </div>
                 </div>

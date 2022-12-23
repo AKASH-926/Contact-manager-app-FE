@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import "./ContactTable.css"
 import { ContactContext, SearchContext, importContext } from '../../Context/ContactContext'
 import axios from "axios"
@@ -6,14 +6,17 @@ export default function ContactTable() {
 
     const { pagedcontact } = useContext(ContactContext)
     const { searchdata, isSearch } = useContext(SearchContext)
-    const { setDeleted, setDeleteOk, selectedId, setSelectedId } = useContext(importContext)
+    const { setDeleted, setDeleteOk, selectedId, setSelectedId,nameSelected,setNameSelected } = useContext(importContext)
     // console.log(searchdata)
 
     const handleCheckBox = (e, id) => {
+       
         if (e.target.checked) {
             setSelectedId([...selectedId, e.target.value])
             console.log(selectedId);
         } else {
+            setNameSelected(false)
+
             const newFiltered = selectedId.filter((id1) => {
                 return id1 !== e.target.value
             })
@@ -31,10 +34,12 @@ export default function ContactTable() {
             data: {
                 source: [id]
             }
+
         })
             .then((data) => {
                 setDeleted(true)
                 setDeleteOk(false)
+                setNameSelected(false)
                 setSelectedId([])
                 setTimeout(async () => {
                     await setDeleted(false)
@@ -50,6 +55,24 @@ export default function ContactTable() {
                 <thead >
                     <tr id='head-wrap'>
                         <th className='border-left-radius' ><input type="checkbox" name="" id="" /></th>
+
+                        <th className='border-left-radius' ><div>
+                            <input type="checkbox" 
+                            checked = {nameSelected}
+                            onChange={(e)=> {
+                                if(e.target.checked){
+                                    setNameSelected(true)
+                                    setSelectedId(pagedcontact)
+                                }else{
+                                    setNameSelected(false)
+                                    setSelectedId([])
+                                }
+
+                            }}
+                             name=""  id="" />
+                        </div>
+                        </th>
+                        
                         <th >Name</th>
                         <th >| Designation <img className='arrow-img' src="/arrow.png" alt="" /></th>
                         <th >| Company<img className='arrow-img' src="/arrow.png" alt="" /></th>
@@ -80,8 +103,12 @@ export default function ContactTable() {
                         : pagedcontact.map((item, i) => {
                             return (
                                 <tr className='table-content-wrap' key={item._id}>
-                                    <td><div><input type="checkbox"
+                                    {/* <td><div><input type="checkbox"
                                         value={item._id} name="" id={item._id}
+                                        onChange={(e) => handleCheckBox(e, item._id)}
+                                    /></div></td> */}
+                                     <td><div><input type="checkbox"
+                                        value={item._id} name="" id={item._id} 
                                         onChange={(e) => handleCheckBox(e, item._id)}
                                     /></div></td>
                                     <td>{item.Name}</td>
