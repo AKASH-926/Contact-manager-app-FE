@@ -57,7 +57,7 @@ export default function Header() {
 
             </div>
             <div id='admin' ><img src="/user.png" alt="" /><div id='admin-name'><span>{user_display}</span>
-                <span>Contacts Manager</span></div></div>
+                <span>user</span></div></div>
 
         </div>
 
