@@ -86,14 +86,14 @@ border-radius: 8px;
  position: absolute;
  width: 80px;
 height: 20px;
- left: 88%;
-top: 12px;
+ left: 86%;
+top: 15px;
 display: flex;
 flex-wrap: wrap;
 flex-direction: column;
 align-content: stretch;
 justify-content: center;
-        
+
 }
 #admin-name{
     display: flex;

@@ -16,7 +16,6 @@ export default function Header() {
             setsearchclick(false)
         }
     }
-    //To display username top right
     let user_display=window.localStorage.getItem('user_name');
     return (
         <div id='header-wrap'>
@@ -56,9 +55,7 @@ export default function Header() {
                 </ul>
 
             </div>
-            <div id='admin' ><img src="/user.png" alt="" /><div id='admin-name'><span>{user_display}</span>
-                <span>user</span></div></div>
-
+            <div id='admin' ><img src="/user.png" alt="" /><div id='admin-name'><span>{user_display}</span>User
         </div>
 
     )
