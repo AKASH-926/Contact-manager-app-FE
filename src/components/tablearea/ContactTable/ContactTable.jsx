@@ -27,7 +27,7 @@ export default function ContactTable() {
     const token = window.localStorage.getItem("jwt")
     const handleDelete = (e, id) => {
 
-        axios.delete("https://contact-srver-test.onrender.com/contacts/delete", {
+        axios.delete("https://dead-tan-bison-kit.cyclic.app/contacts/delete", {
             headers: {
                 authorization: token
             },

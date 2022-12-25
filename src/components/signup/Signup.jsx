@@ -30,7 +30,7 @@ function Signup() {
             });
         }
 
-        await Axios("https://contact-srver-test.onrender.com/signup", {
+        await Axios("https://dead-tan-bison-kit.cyclic.app/signup", {
             method: "post",
             headers: {
                 "Content-Type": "application/json",

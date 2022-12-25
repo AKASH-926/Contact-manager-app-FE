@@ -20,7 +20,7 @@ export default function ImportFile() {
             };
             const token = window.localStorage.getItem("jwt")
             const sendData = () => {
-                axios.post("https://contact-srver-test.onrender.com/contacts/import",
+                axios.post("https://dead-tan-bison-kit.cyclic.app/contacts/import",
                     payload,
                     {
                         headers: { authorization: token },
