@@ -1,5 +1,5 @@
 
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import "./importFile.css"
 import { parse } from "papaparse"
 import axios from "axios"
@@ -8,7 +8,6 @@ export default function ImportFile() {
     const { imported, setImported, isImportClicked, setImportClicked } = useContext(importContext)
     const handleDragOver = (e) => {
         e.preventDefault()
-        console.log("dragged");
     }
     const HandleDrop = (e) => {
         e.preventDefault();

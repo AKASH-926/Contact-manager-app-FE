@@ -1,8 +1,7 @@
-// import '../node_modules/react-toastify/dist/ReactToastify.css'
+
 import '../../../node_modules/react-toastify/dist/ReactToastify.css'
 import 'react-toastify/dist/ReactToastify.min.css'
-import React, { useContext, useState } from 'react'
-import { Navigate, Outlet } from "react-router-dom"
+import React, { useContext } from 'react'
 import { useNavigate } from 'react-router-dom';
 import "./sidebar.css"
 import { toast } from 'react-toastify';

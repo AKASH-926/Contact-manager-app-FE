@@ -1,10 +1,10 @@
-// import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import React, { useContext, useEffect, useState } from 'react'
 import { ContactContext } from '../Context/ContactContext'
 import "./Pagination.css"
 export default function Pagination() {
-    const { contactdata, setcontactdata, pagedcontact, setpagedcontact } = useContext(ContactContext)
+    const { contactdata, setpagedcontact } = useContext(ContactContext)
 
     const [pageNo, setPageNo] = useState(1);
     let limit = 10;
@@ -14,10 +14,14 @@ export default function Pagination() {
     const end = pageNo * limit;
     useEffect(() => {
         setpagedcontact(contactdata.slice(start, end));
+        /* eslint-disable-next-line  */
     }, [contactdata])
+
     useEffect(() => {
         setpagedcontact(contactdata.slice(start, end));
+        /* eslint-disable-next-line  */
     }, [pageNo])
+
 
 
 
@@ -28,7 +32,6 @@ export default function Pagination() {
                 <ul className="pagination">
                     <li className="page-item" onClick={() => {
                         if (pageNo > 1) {
-                            console.log(pageNo - 1);
                             setPageNo(pageNo - 1)
                         }
                     }}>
@@ -39,7 +42,6 @@ export default function Pagination() {
                     {pagesArray.map((ele, i) => {
                         return (
                             <li className="page-item" key={i + 1} onClick={() => {
-                                console.log(i + 1);
                                 setPageNo(i + 1)
                             }}><span className="page-link"  >{i + 1}</span></li>
                         )
@@ -48,7 +50,6 @@ export default function Pagination() {
 
                     <li className="page-item" onClick={() => {
                         if (pageNo < pages) {
-                            console.log(pageNo + 1);
                             setPageNo(pageNo + 1)
                         }
 

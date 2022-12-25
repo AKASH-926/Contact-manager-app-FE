@@ -13,7 +13,7 @@ import { importContext, ContactContext } from '../Context/ContactContext'
 import Dashboard from '../Dashboard/Dashboard'
 export default function ContactPage() {
     const { isDeleted, imported, isImportClicked, isDeleteOk } = useContext(importContext)
-    const { seldash, setseldash } = useContext(ContactContext)
+    const { seldash } = useContext(ContactContext)
     return (
         <div id='contact-page-wrap'>
             <div className={isDeleteOk || isDeleted || imported || isImportClicked ? "delete-import-components " : ""}  >

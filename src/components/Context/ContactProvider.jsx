@@ -1,4 +1,4 @@
-import { ContactContext, SearchContext } from "./ContactContext";
+import { ContactContext } from "./ContactContext";
 import { importContext } from "./ContactContext";
 import React, { useContext, useEffect, useState } from 'react'
 import axios from "axios"
@@ -16,7 +16,6 @@ export default function ContactProvider({ children }) {
     useEffect(() => {
         const datafetch = async () => {
             await axios.get("https://dead-tan-bison-kit.cyclic.app/contacts", { headers: { authorization: token } }).then((response) => { setcontactdata(response.data.contacts) })
-            console.log(contactdata)
         }
         datafetch()
         // eslint-disable-next-line 

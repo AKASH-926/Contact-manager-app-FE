@@ -7,7 +7,7 @@ export default function Header() {
     const [searchquery, setsearchquery] = useState([])
     const [searchclick, setsearchclick] = useState(true)
     const token = window.localStorage.getItem('jwt')
-    const { contactdata, setcontactdata, pagedcontact, setpagedcontact } = useContext(ContactContext)
+    const { contactdata } = useContext(ContactContext)
     const { searchdata, setsearchdata, setisSearch } = useContext(SearchContext)
     const handledisplay = (item) => {
         if (token) {

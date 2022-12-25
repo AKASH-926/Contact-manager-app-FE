@@ -8,8 +8,6 @@ import Protected_route from './components/Protected_routes/Protected_route';
 import ContactProvider from './components/Context/ContactProvider';
 import SearchProvider from './components/Context/SearchProvider';
 import ImportProvider from './components/Context/ImportProvider';
-import Delete from './components/delete/Delete';
-import Dashboard from './components/Dashboard/Dashboard';
 function App() {
   return (
     <>
@@ -20,6 +18,7 @@ function App() {
               <Routes>
                 <Route path='/signup' element={<Signup />} />
                 <Route path='/' element={<Login />} />
+                {/* eslint-disable-next-line  */}
                 <Route element={<Protected_route />}>
                   <Route path='/contacts' element={
                     <ContactPage />} />

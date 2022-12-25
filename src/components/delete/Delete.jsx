@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import "./Delete.css"
 import { importContext } from '../Context/ContactContext';
 import axios from "axios"
@@ -12,11 +12,6 @@ export default function Delete(props) {
     }
     const token = window.localStorage.getItem("jwt")
     const handleDelete = (e) => {
-        // console.log("printing1", isSelectedLen);
-        // console.log(selectedId);
-
-
-        console.log("printing2", isSelectedLen);
         axios.delete("https://dead-tan-bison-kit.cyclic.app/contacts/delete", {
             headers: {
                 authorization: token
@@ -28,7 +23,6 @@ export default function Delete(props) {
             .then((data) => {
                 setDeleteOk(false)
                 setDeleted(true)
-                console.log(isSelectedLen);
                 setSelectedId([])
                 setNameSelected(false)
                 setTimeout(async () => {
